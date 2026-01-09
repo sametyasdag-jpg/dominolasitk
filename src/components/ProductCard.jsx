@@ -100,10 +100,11 @@ export default function ProductCard({ product, index = 0 }) {
             )}
           </div>
 
-          {/* Lastik Campaign Badge */}
-          {product.category === 'oto-lastikler' && (
-            <div className="bg-gradient-to-r from-slate-900 to-indigo-900 px-2 py-1">
-              <p className="text-white text-[10px] font-semibold text-center">4 AL 3 ÖDE</p>
+          {/* Lastik Campaign Badge - Jant ve Yağlar hariç */}
+          {['kis-lastikleri', 'yaz-lastikleri', 'dört-mevsim-lastikler', 'motorsiklet-lastikleri', 'agir-vasita-lastikleri', 'is-makinesi-lastikleri'].includes(product.category) && (
+            <div className="relative bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900 px-2 py-1 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" />
+              <p className="text-white text-[10px] font-semibold text-center relative z-10">4 AL 3 ÖDE</p>
             </div>
           )}
 

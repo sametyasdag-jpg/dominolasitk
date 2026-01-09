@@ -371,7 +371,7 @@ function OrdersFooter() {
         <Image className="mt-4" src={footerlogo2} alt="Security" width={120} height={40} />
 
         <div className="w-full mt-4 text-xs bg-black text-white p-3 rounded-md text-center">
-          ©2014-2025 Oto Market 360 "Oto Market 360 Limited Şirketi" KURULUŞUDUR.
+          ©2014-2025 Lastik Alsana "Lastik Alsana Limited Şirketi" KURULUŞUDUR.
         </div>
       </div>
     </div>
@@ -414,7 +414,7 @@ export default function SiparislerimPage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50 pt-[106px]">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 pt-[126px]">
         <div className="w-8 h-8 border-3 border-indigo-600 border-t-transparent rounded-full animate-spin" />
       </div>
     );
@@ -423,7 +423,7 @@ export default function SiparislerimPage() {
   // Empty state
   if (orders.length === 0) {
     return (
-      <div className="min-h-screen bg-gray-50 pt-[106px] pb-24">
+      <div className="min-h-screen bg-gray-50 pt-[126px] pb-24">
         <div className="flex flex-col items-center justify-center px-4 py-16 text-center">
           <motion.div
             initial={{ scale: 0 }}
@@ -450,7 +450,7 @@ export default function SiparislerimPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-[106px] pb-24">
+    <div className="min-h-screen bg-gray-50 pt-[126px] pb-24">
       {/* Header */}
       <div className="bg-white px-4 py-6 border-b border-gray-100">
         <h1 className="text-2xl font-bold text-gray-900">Siparişlerim</h1>

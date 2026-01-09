@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaWhatsapp, FaShieldAlt, FaBuilding, FaHeadset, FaFileContract } from 'react-icons/fa';
-import logosaydam from '../assets/logosaydam.png';
 import footerlogo1 from '../assets/footerlogo1.webp';
 import footerlogo2 from '../assets/footerlogo2.webp';
 import maliyeLogo from '../assets/maliye.png';
@@ -120,7 +119,14 @@ export default function Footer() {
 
       {/* Main Footer Content */}
       <div className='w-full flex flex-col items-center pt-6 pb-10 px-4'>
-       <Image src="/logo3.png" alt="Logo" width={180} height={190} />
+       <span 
+          className="text-4xl font-black tracking-tight bg-gradient-to-r from-red-600 via-red-500 to-orange-500 bg-clip-text text-transparent transform -rotate-2 inline-block"
+          style={{ 
+            fontFamily: "'Poppins', sans-serif",
+          }}
+        >
+          lastikalsana
+        </span>
       <p className='text-gray-500 mt-2 text-sm mb-6'>Müşteri Hizmetleri | Çağrı Hattı</p>
       
       {/* WhatsApp Button */}
@@ -143,14 +149,14 @@ export default function Footer() {
     
       <Image className='mt-4' src={footerlogo2} alt="Logo" width={140}  />
          <p className='text-center text-[13px] text-gray-500 mt-4'>
-          <span className='font-bold' > Oto Market 360 Limited Şirketi,</span> motorsiklet ve otomotiv tutkunlarına yönelik, kask, koruyucu giyim, eldiven, lastik ve aksesuar gibi ürünlerde uzmanlaşmış güvenilir bir e-ticaret platformudur. Kurulduğu günden itibaren müşterilerine hem güvenli hem de sorunsuz bir alışveriş deneyimi sunmak için modern altyapılar ve yüksek güvenlik standartlarıyla hizmet vermektedir.
+          <span className='font-bold' > Lastik Alsana Limited Şirketi,</span> araç sahiplerine yönelik, kış lastikleri, yaz lastikleri, dört mevsim lastikler, jantlar, motor yağları ve ağır vasıta lastikleri gibi ürünlerde uzmanlaşmış güvenilir bir e-ticaret platformudur. Kurulduğu günden itibaren müşterilerine hem güvenli hem de sorunsuz bir alışveriş deneyimi sunmak için modern altyapılar ve yüksek güvenlik standartlarıyla hizmet vermektedir.
          </p>
-         <p className='text-center text-[13px] text-gray-500 mt-4'> <span className='font-bold' >  otomarket360.com </span> üzerinden yapacağınız alışverişlerde kredi kartı bilgileriniz yalnızca ödeme işlemi sırasında kullanılır ve kesinlikle veri tabanında saklanmaz. Böylece ödeme bilgileriniz üçüncü tarafların erişimine karşı tamamen güvence altındadır.</p>
-         <p className='text-center text-[13px] text-gray-500 mt-4'>Sitemizde gerçekleştirilen tüm işlemlerin gerçekten  <span className='font-bold' >  otomarket360.com </span> sunucularına iletildiğini garanti altına almak için gelişmiş  <span className='font-bold' >  256 bit SSL sertifikası </span>  kullanılmaktadır. Bu teknoloji sayesinde aktardığınız tüm kişisel veriler şifrelenerek güvenli bir şekilde işlenir ve yetkisiz erişimlere karşı korunur.</p>
-         <p className='text-center text-[13px] text-gray-500 mt-4'>Oto Market 360, kullanıcı güvenliğini temel ilke olarak benimser. Hem teknik altyapımızı hem de veri koruma sistemlerimizi düzenli olarak güncelleyerek güvenli alışveriş ortamını daima en üst seviyede tutarız. Amacımız; müşterilerimize hızlı, modern, şeffaf ve güven veren bir alışveriş deneyimi sunmak, satın aldığınız her ürünü sorunsuz şekilde size ulaştırmaktır.</p>
-         <p className='text-center text-[13px] text-gray-500 mt-4'>Oto Market 360 olarak, güvenli alışverişin standartlarını yükseltmeye ve kullanıcılarımıza her zaman konforlu bir deneyim sunmaya devam ediyoruz.</p>
+         <p className='text-center text-[13px] text-gray-500 mt-4'> <span className='font-bold' >  lastikalsana.com </span> üzerinden yapacağınız alışverişlerde kredi kartı bilgileriniz yalnızca ödeme işlemi sırasında kullanılır ve kesinlikle veri tabanında saklanmaz. Böylece ödeme bilgileriniz üçüncü tarafların erişimine karşı tamamen güvence altındadır.</p>
+         <p className='text-center text-[13px] text-gray-500 mt-4'>Sitemizde gerçekleştirilen tüm işlemlerin gerçekten  <span className='font-bold' >  lastikalsana.com </span> sunucularına iletildiğini garanti altına almak için gelişmiş  <span className='font-bold' >  256 bit SSL sertifikası </span>  kullanılmaktadır. Bu teknoloji sayesinde aktardığınız tüm kişisel veriler şifrelenerek güvenli bir şekilde işlenir ve yetkisiz erişimlere karşı korunur.</p>
+         <p className='text-center text-[13px] text-gray-500 mt-4'>Lastik Alsana, kullanıcı güvenliğini temel ilke olarak benimser. Hem teknik altyapımızı hem de veri koruma sistemlerimizi düzenli olarak güncelleyerek güvenli alışveriş ortamını daima en üst seviyede tutarız. Amacımız; müşterilerimize hızlı, modern, şeffaf ve güven veren bir alışveriş deneyimi sunmak, satın aldığınız her ürünü sorunsuz şekilde size ulaştırmaktır.</p>
+         <p className='text-center text-[13px] text-gray-500 mt-4'>Lastik Alsana olarak, güvenli alışverişin standartlarını yükseltmeye ve kullanıcılarımıza her zaman konforlu bir deneyim sunmaya devam ediyoruz.</p>
   
-  <div className='w-full mt-4 text-xs bg-black text-white p-3 rounded-md text-center'> ©2014-2025  Oto Market 360 "Oto Market 360 Limited Şirketi" KURULUŞUDUR.</div>
+  <div className='w-full mt-4 text-xs bg-black text-white p-3 rounded-md text-center'> ©2014-2025  Lastik Alsana "Lastik Alsana Limited Şirketi" KURULUŞUDUR.</div>
       </div>
     </footer>
   );

@@ -11,7 +11,7 @@ export default function CategoriesPage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50 pt-[106px]">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 pt-[126px]">
         <div className="text-center">
           <div className="w-12 h-12 border-4 border-red-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
           <p className="text-gray-500 font-medium">Yükleniyor...</p>
@@ -21,12 +21,12 @@ export default function CategoriesPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-[106px]">
+    <div className="min-h-screen bg-gray-50 pt-[126px]">
       <div className="max-w-7xl mx-auto px-4 py-6">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-2xl font-bold text-gray-900 mb-2">Kategoriler</h1>
-          <p className="text-gray-500">Motorsiklet ve otomotiv ürünlerimizi keşfedin</p>
+          <p className="text-gray-500">Lastik, jant ve motor yağı ürünlerimizi keşfedin</p>
         </div>
 
         {/* Categories Grid */}

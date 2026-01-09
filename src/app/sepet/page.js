@@ -87,11 +87,11 @@ function CartFooter() {
         <Image className="mt-4" src={footerlogo2} alt="Security" width={120} height={40} />
         
         <p className="text-center text-[11px] text-gray-500 mt-4 px-2">
-          <span className="font-bold">Oto Market 360 Limited Şirketi,</span> motorsiklet ve otomotiv tutkunlarına yönelik, kask, koruyucu giyim, eldiven, lastik ve aksesuar gibi ürünlerde uzmanlaşmış güvenilir bir e-ticaret platformudur.
+          <span className="font-bold">Lastik Alsana Limited Şirketi,</span> araç sahiplerine yönelik, kış lastikleri, yaz lastikleri, dört mevsim lastikler, jantlar ve motor yağları gibi ürünlerde uzmanlaşmış güvenilir bir e-ticaret platformudur.
         </p>
         
         <p className="text-center text-[11px] text-gray-500 mt-3 px-2">
-          <span className="font-bold">otomarket360.com</span> üzerinden yapacağınız alışverişlerde kredi kartı bilgileriniz yalnızca ödeme işlemi sırasında kullanılır ve kesinlikle veri tabanında saklanmaz.
+          <span className="font-bold">lastikalsana.com</span> üzerinden yapacağınız alışverişlerde kredi kartı bilgileriniz yalnızca ödeme işlemi sırasında kullanılır ve kesinlikle veri tabanında saklanmaz.
         </p>
         
         <p className="text-center text-[11px] text-gray-500 mt-3 px-2">
@@ -99,7 +99,7 @@ function CartFooter() {
         </p>
 
         <div className="w-full mt-4 text-xs bg-black text-white p-3 rounded-md text-center">
-          ©2014-2025 Oto Market 360 "Oto Market 360 Limited Şirketi" KURULUŞUDUR.
+          ©2014-2025 Lastik Alsana "Lastik Alsana Limited Şirketi" KURULUŞUDUR.
         </div>
       </div>
     </div>
@@ -152,7 +152,7 @@ export default function CartPage() {
 
   if (cart.length === 0) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center px-4 text-center bg-gray-50 pt-[106px]">
+      <div className="min-h-screen flex flex-col items-center justify-center px-4 text-center bg-gray-50 pt-[126px]">
         <div className="w-24 h-24 rounded-full bg-gray-100 flex items-center justify-center mb-6">
           <HiOutlineShoppingCart className="w-12 h-12 text-gray-400" />
         </div>
@@ -171,7 +171,7 @@ export default function CartPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-40 pt-[106px]">
+    <div className="min-h-screen bg-gray-50 pb-40 pt-[126px]">
       {/* Countdown Banner */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}

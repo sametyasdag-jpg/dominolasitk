@@ -66,7 +66,9 @@ export function ProductsProvider({ children }) {
 
   // Kategoriye göre ürünleri getir
   const getProductsByCategory = (categoryId) => {
-    return products.filter(p => p.category === categoryId);
+    // Decode URL encoded characters
+    const decodedId = decodeURIComponent(categoryId);
+    return products.filter(p => p.category === decodedId || p.category === categoryId);
   };
 
   // Öne çıkan ürünleri getir (featured veya homepageSections'da 'featured' olanlar)
@@ -146,9 +148,17 @@ export function ProductsProvider({ children }) {
     );
   };
 
-  // Kategori getir
+  // Kategori getir - categoryId veya document id ile ara
   const getCategoryById = (categoryId) => {
-    return categories.find(c => c.categoryId === categoryId);
+    // Decode URL encoded characters
+    const decodedId = decodeURIComponent(categoryId);
+    
+    return categories.find(c => 
+      c.categoryId === decodedId || 
+      c.categoryId === categoryId ||
+      c.id === decodedId ||
+      c.id === categoryId
+    );
   };
 
   const value = {

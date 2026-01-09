@@ -5,38 +5,38 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiX } from 'react-icons/hi';
-import { getProductById } from '@/lib/productService';
+import { searchProducts } from '@/lib/productService';
+
+// Promo ürün adı - Firebase'den bu isimle aranacak
+const PROMO_PRODUCT_NAME = 'Goodyear 205/55 R16 91H Ultragrip 8 Oto Kış Lastiği';
 
 export default function ProductPromoPopup() {
   const [isVisible, setIsVisible] = useState(false);
   const [product, setProduct] = useState(null);
 
-  // Goodyear ürün ID'si
-  const PROMO_PRODUCT_ID = '2EHTBXydjFzmTRUEPvB7';
-
   useEffect(() => {
     // LocalStorage'dan popup'ın daha önce gösterilip gösterilmediğini kontrol et
-    const hasSeenPopup = localStorage.getItem('goodyearPromoPopupSeen');
+    const hasSeenPopup = localStorage.getItem('lastikalsanaPromoPopupSeen');
     
     if (!hasSeenPopup) {
-      // Ürün verisini çek
+      // Firebase'den ürünü ara
       const fetchProduct = async () => {
         try {
-          const productData = await getProductById(PROMO_PRODUCT_ID);
-          if (productData) {
-            setProduct(productData);
+          const results = await searchProducts('Goodyear Ultragrip 8');
+          if (results && results.length > 0) {
+            setProduct(results[0]);
           }
         } catch (error) {
           console.error('Error fetching promo product:', error);
         }
       };
-
+      
       fetchProduct();
 
       // 6 saniye sonra popup'ı göster
       const timer = setTimeout(() => {
         setIsVisible(true);
-        localStorage.setItem('goodyearPromoPopupSeen', 'true');
+        localStorage.setItem('lastikalsanaPromoPopupSeen', 'true');
       }, 6000);
 
       return () => clearTimeout(timer);
@@ -191,7 +191,7 @@ export default function ProductPromoPopup() {
 
                   {/* CTA Button */}
                   <Link
-                    href={`/urun/${product.id}`}
+                    href={product?.id ? `/urun/${product.id}` : '/kategori/kis-lastikleri'}
                     onClick={handleClose}
                     className="block mt-5 w-full py-3.5 bg-gradient-to-r from-slate-900 via-slate-800 to-indigo-900 text-white font-bold text-sm rounded-full transition-all shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98]"
                   >

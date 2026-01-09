@@ -31,19 +31,20 @@ import { useAuth } from '@/context/AuthContext';
 import { useProducts } from '@/context/ProductsContext';
 import PromoBanner from './PromoBanner';
 
-// Animated Logo Component - iOS Style
+// Animated Logo Component - Stylized Text
 function Logo() {
   return (
-    <Link href="/" className="flex items-center mt-2 mr-2 group">
+    <Link href="/" className="flex items-center group">
       <div className="relative overflow-hidden">
-        <Image 
-          src="/logo3.png" 
-          alt="Logo" 
-          width={70} 
-          height={70}
-          priority
-          unoptimized
-        />
+        <span 
+          className="text-2xl font-black tracking-tight bg-gradient-to-r from-zinc-900 via-zinc-700 to-zinc-500 bg-clip-text text-transparent transform -rotate-3 inline-block hover:rotate-0 transition-transform duration-300"
+          style={{ 
+            fontFamily: "'Poppins', sans-serif",
+          }}
+        >
+          lastikalsana
+        </span>
+        <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-zinc-800 via-zinc-600 to-zinc-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
       </div>
     </Link>
   );
@@ -117,7 +118,7 @@ export default function Navbar() {
       <PromoBanner />
       
       <nav 
-        className={`fixed top-[46px] left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed top-[66px] left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled ? 'bg-white shadow-sm border-b border-gray-100' : 'bg-white/80 backdrop-blur-md'
         }`}
       >
@@ -142,17 +143,17 @@ export default function Navbar() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
-              <Link href="/kategori/kasklar" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
-                Kasklar
+              <Link href="/kategori/kis-lastikleri" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
+                Kış Lastikleri
               </Link>
-              <Link href="/kategori/giyim-urunleri" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
-                Giyim
+              <Link href="/kategori/yaz-lastikleri" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
+                Yaz Lastikleri
               </Link>
-              <Link href="/kategori/oto-lastikler" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
-                Lastikler
+              <Link href="/kategori/jant" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
+                Jantlar
               </Link>
-              <Link href="/kategori/eldiven" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
-                Eldivenler
+              <Link href="/kategori/motor-yaglari" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
+                Motor Yağları
               </Link>
             </div>
 
@@ -196,7 +197,7 @@ export default function Navbar() {
                       type="text"
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      placeholder="Kask, mont, eldiven ara..."
+                      placeholder="Lastik, jant, yağ ara..."
                       autoFocus
                       className="w-full h-14 pl-12 pr-4 bg-gray-100 border-0 rounded-2xl text-gray-900 placeholder-gray-400 outline-none focus:ring-2 focus:ring-red-500/20 transition-all"
                     />
@@ -214,7 +215,7 @@ export default function Navbar() {
               <div className="space-y-4">
                 <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider">Popüler Aramalar</h3>
                 <div className="flex flex-wrap gap-2">
-                  {['Kask', 'Mont', 'Eldiven', 'Lastik', 'Aksesuar', 'Koruyucu'].map((term) => (
+                  {['Kış Lastiği', 'Yaz Lastiği', 'Jant', 'Motor Yağı', '4 Mevsim', 'Ağır Vasıta'].map((term) => (
                     <button
                       key={term}
                       onClick={() => {

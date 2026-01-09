@@ -55,7 +55,7 @@ export default function CerezPolitikasiPage() {
               ve size daha iyi bir deneyim sunmak için kullanılır.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              <strong>otomarket360.com</strong> olarak, kullanıcı deneyimini iyileştirmek, 
+              <strong>lastikalsana.com</strong> olarak, kullanıcı deneyimini iyileştirmek, 
               site performansını analiz etmek ve kişiselleştirilmiş içerik sunmak için çerezler kullanmaktayız.
             </p>
           </div>
@@ -207,7 +207,7 @@ export default function CerezPolitikasiPage() {
           <div className="bg-blue-50 border border-blue-100 rounded-2xl p-6">
             <h3 className="font-semibold text-blue-800 mb-2">İletişim</h3>
             <p className="text-blue-700 text-sm leading-relaxed">
-              Çerez politikamız hakkında sorularınız için <strong>info@otomarket360.com</strong> adresinden 
+              Çerez politikamız hakkında sorularınız için <strong>info@lastikalsana.com</strong> adresinden 
               bizimle iletişime geçebilirsiniz.
             </p>
           </div>

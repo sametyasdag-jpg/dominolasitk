@@ -17,9 +17,7 @@ import {
   HiHome
 } from 'react-icons/hi';
 import { 
-  GiFullMotorcycleHelmet, 
   GiCarWheel,
-  GiGloves,
   GiSteeringWheel,
   GiSpeedometer,
   GiCarKey
@@ -68,17 +66,15 @@ const navItems = [
   },
 ];
 
-// Professional automotive icons from react-icons library
+// Lastik ve otomotiv temalı ikonlar
 const icons = [
-  { id: 'helmet', Icon: GiFullMotorcycleHelmet },  // Motorsiklet Kaskı
-  { id: 'motorcycle', Icon: FaMotorcycle },         // Motorsiklet
-  { id: 'gloves', Icon: GiGloves },                 // Eldiven
   { id: 'tire', Icon: GiCarWheel },                 // Lastik/Tekerlek
   { id: 'car', Icon: FaCar },                       // Araba
   { id: 'steering', Icon: GiSteeringWheel },        // Direksiyon
+  { id: 'gas', Icon: FaGasPump },                   // Motor Yağı/Benzin
   { id: 'speedometer', Icon: GiSpeedometer },       // Hız Göstergesi
-  { id: 'gas', Icon: FaGasPump },                   // Benzin Pompası
   { id: 'carkey', Icon: GiCarKey },                 // Araba Anahtarı
+  { id: 'motorcycle', Icon: FaMotorcycle },         // Motorsiklet
 ];
 
 // Sliding icon component with fade in/out
@@ -88,7 +84,7 @@ function SlidingIcons() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % icons.length);
-    }, 7500); // 7.5 saniye
+    }, 4000); // 4 saniye - daha sık geçiş
     return () => clearInterval(interval);
   }, []);
 
@@ -258,7 +254,7 @@ export default function BottomNavbar({ force = false }) {
   };
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-t border-gray-100 shadow-lg">
+    <nav data-bottom-nav className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-t border-gray-100 shadow-lg">
       <div className="h-20 max-w-lg mx-auto px-2 flex items-center">
         {/* Left side - 2 items */}
         <div className="flex-1 flex items-center justify-around">
@@ -276,19 +272,33 @@ export default function BottomNavbar({ force = false }) {
               whileTap={{ scale: 0.9 }}
               className="w-16 h-16 rounded-2xl overflow-hidden shadow-xl relative"
             >
-              {/* Gradient Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-800" />
+              {/* Gradient Background - Siyah/Gri */}
+              <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-neutral-800 to-zinc-900" />
               
-              {/* Animated shine effect */}
+              {/* Animated shine effect - Daha sık */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -skew-x-12"
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -skew-x-12"
                 animate={{
                   x: ['-100%', '100%'],
                 }}
                 transition={{
-                  duration: 2.5,
+                  duration: 1.5,
                   repeat: Infinity,
-                  repeatDelay: 4,
+                  repeatDelay: 1.5,
+                  ease: 'easeInOut',
+                }}
+              />
+              
+              {/* Second shine layer for more effect */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12"
+                animate={{
+                  x: ['100%', '-100%'],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  repeatDelay: 2,
                   ease: 'easeInOut',
                 }}
               />
@@ -299,7 +309,7 @@ export default function BottomNavbar({ force = false }) {
               </div>
               
               {/* Border glow */}
-              <div className="absolute inset-0 rounded-2xl border border-white/20" />
+              <div className="absolute inset-0 rounded-2xl border border-white/30" />
             </motion.div>
           </Link>
         </div>

@@ -1,11 +1,12 @@
 // Shared Firebase Configuration
+// Your web app's Firebase configuration
 export const firebaseConfig = {
-  apiKey: "AIzaSyDRwrJIH59pSMucFIFkeDWGd2f5uoBc3zc",
-  authDomain: "otomotivsepeti-8048d.firebaseapp.com",
-  projectId: "otomotivsepeti-8048d",
-  storageBucket: "otomotivsepeti-8048d.firebasestorage.app",
-  messagingSenderId: "455300473454",
-  appId: "1:455300473454:web:95649300aa59a71f7ffc7f",
-  measurementId: "G-VKF0V9CK8V"
+  apiKey: "AIzaSyAlb8h5trjojK_KbDu__15JolEsE5rAG38",
+  authDomain: "dominolastik-d109d.firebaseapp.com",
+  projectId: "dominolastik-d109d",
+  storageBucket: "dominolastik-d109d.firebasestorage.app",
+  messagingSenderId: "556504123794",
+  appId: "1:556504123794:web:645f0109aa1b3e3893994b"
 };
+
 

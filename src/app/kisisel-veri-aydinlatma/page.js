@@ -27,13 +27,13 @@ export default function KisiselVeriAydinlatmaPage() {
             <h2 className="text-2xl font-bold text-gray-800 mb-4">Veri Sorumlusu</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
               6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") uyarınca, kişisel verileriniz; 
-              veri sorumlusu olarak <strong>Oto Market 360 Limited Şirketi</strong> tarafından aşağıda 
+              veri sorumlusu olarak <strong>Lastik Alsana Limited Şirketi</strong> tarafından aşağıda 
               açıklanan kapsamda işlenebilecektir.
             </p>
             <div className="bg-gray-50 rounded-xl p-4 text-gray-600">
-              <p><strong>Veri Sorumlusu:</strong> Oto Market 360 Limited Şirketi</p>
+              <p><strong>Veri Sorumlusu:</strong> Lastik Alsana Limited Şirketi</p>
               <p><strong>Adres:</strong> Manisa, Türkiye</p>
-              <p><strong>E-posta:</strong> kvkk@otomarket360.com</p>
+              <p><strong>E-posta:</strong> kvkk@lastikalsana.com</p>
             </div>
           </div>
 
@@ -213,7 +213,7 @@ export default function KisiselVeriAydinlatmaPage() {
               Yukarıda belirtilen haklarınızı kullanmak için aşağıdaki yöntemlerle başvurabilirsiniz:
             </p>
             <ul className="space-y-2 text-red-100">
-              <li>• E-posta ile: <strong className="text-white">kvkk@otomarket360.com</strong></li>
+              <li>• E-posta ile: <strong className="text-white">kvkk@lastikalsana.com</strong></li>
               <li>• Yazılı başvuru ile şirket adresimize posta yoluyla</li>
             </ul>
           </div>

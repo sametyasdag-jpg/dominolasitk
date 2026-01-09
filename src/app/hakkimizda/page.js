@@ -38,7 +38,7 @@ export default function HakkimizdaPage() {
             </div>
             <h1 className="text-3xl md:text-4xl font-bold mb-4">Hakkımızda</h1>
             <p className="text-gray-300 text-lg">
-              Oto Market 360 olarak motorsiklet ve otomotiv tutkunlarına hizmet veriyoruz.
+              Lastik Alsana olarak araç sahiplerine en kaliteli lastik ve otomotiv ürünlerini sunuyoruz.
             </p>
           </div>
         </div>
@@ -53,8 +53,8 @@ export default function HakkimizdaPage() {
             </h2>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
-                <strong className="text-gray-800">Oto Market 360 Limited Şirketi</strong>, motorsiklet ve otomotiv tutkunlarına yönelik, 
-                kask, koruyucu giyim, eldiven, lastik ve aksesuar gibi ürünlerde uzmanlaşmış güvenilir bir e-ticaret platformudur.
+                <strong className="text-gray-800">Lastik Alsana Limited Şirketi</strong>, araç sahiplerine yönelik, 
+                kış lastikleri, yaz lastikleri, dört mevsim lastikler, jantlar, motor yağları ve ağır vasıta lastikleri gibi ürünlerde uzmanlaşmış güvenilir bir e-ticaret platformudur.
               </p>
               <p>
                 Kurulduğu günden itibaren müşterilerine hem güvenli hem de sorunsuz bir alışveriş deneyimi sunmak için 
@@ -90,15 +90,15 @@ export default function HakkimizdaPage() {
             <div className="bg-gradient-to-br from-red-500 to-red-600 rounded-2xl p-6 text-white">
               <h3 className="text-xl font-bold mb-3">Misyonumuz</h3>
               <p className="text-red-100 leading-relaxed">
-                Motorsiklet ve otomotiv tutkunlarına en kaliteli ürünleri, en uygun fiyatlarla ve 
+                Araç sahiplerine en kaliteli lastikleri, jantları ve motor yağlarını en uygun fiyatlarla ve 
                 mükemmel müşteri deneyimiyle sunmak.
               </p>
             </div>
             <div className="bg-gradient-to-br from-slate-700 to-slate-800 rounded-2xl p-6 text-white">
               <h3 className="text-xl font-bold mb-3">Vizyonumuz</h3>
               <p className="text-slate-300 leading-relaxed">
-                Türkiye'nin en güvenilir ve tercih edilen motorsiklet ve otomotiv 
-                ekipmanları platformu olmak.
+                Türkiye'nin en güvenilir ve tercih edilen lastik ve otomotiv 
+                ürünleri platformu olmak.
               </p>
             </div>
           </div>

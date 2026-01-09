@@ -45,9 +45,9 @@ export default function IsBirligiPage() {
         <div className="max-w-4xl mx-auto px-4 py-12">
           {/* Intro */}
           <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Neden Oto Market 360 ile Çalışmalısınız?</h2>
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">Neden Lastik Alsana ile Çalışmalısınız?</h2>
             <p className="text-gray-600 leading-relaxed">
-              Oto Market 360 olarak, iş ortaklarımızla karşılıklı fayda sağlayan uzun vadeli ilişkiler kurmayı hedefliyoruz. 
+              Lastik Alsana olarak, iş ortaklarımızla karşılıklı fayda sağlayan uzun vadeli ilişkiler kurmayı hedefliyoruz. 
               Motorsiklet ve otomotiv sektöründe güçlü bir marka olarak, tedarikçilerimize ve iş ortaklarımıza 
               geniş bir müşteri kitlesine erişim imkanı sunuyoruz.
             </p>
@@ -91,11 +91,11 @@ export default function IsBirligiPage() {
               İş birliği teklifleriniz için bizimle iletişime geçebilirsiniz. Ekibimiz en kısa sürede sizinle iletişime geçecektir.
             </p>
             <a 
-              href="mailto:isbirligi@otomarket360.com" 
+              href="mailto:isbirligi@lastikalsana.com" 
               className="inline-flex items-center gap-2 bg-white text-red-600 px-6 py-3 rounded-xl font-semibold hover:bg-red-50 transition-colors"
             >
               <FaEnvelope className="w-4 h-4" />
-              isbirligi@otomarket360.com
+              isbirligi@lastikalsana.com
             </a>
           </div>
 

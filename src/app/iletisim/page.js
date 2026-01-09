@@ -25,8 +25,8 @@ export default function IletisimPage() {
     {
       icon: FaEnvelope,
       title: 'E-posta',
-      value: 'info@otomarket360.com',
-      link: 'mailto:info@otomarket360.com',
+      value: 'info@lastikalsana.com',
+      link: 'mailto:info@lastikalsana.com',
       color: 'bg-red-100 text-red-600'
     },
     {
@@ -115,7 +115,7 @@ export default function IletisimPage() {
                 <div>
                   <h3 className="font-semibold text-gray-800 mb-1">Merkez Ofis</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    Oto Market 360 Limited Şirketi<br />
+                    Lastik Alsana Limited Şirketi<br />
                     Manisa, Türkiye
                   </p>
                 </div>

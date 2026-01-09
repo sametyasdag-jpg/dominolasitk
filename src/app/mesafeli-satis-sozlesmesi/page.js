@@ -31,11 +31,11 @@ export default function MesafeliSatisSozlesmesiPage() {
               <h2 className="text-xl font-bold text-gray-800">MADDE 1 - SATICI BİLGİLERİ</h2>
             </div>
             <div className="bg-gray-50 rounded-xl p-4 space-y-2 text-gray-600">
-              <p><strong>Ünvan:</strong> Oto Market 360 Limited Şirketi</p>
+              <p><strong>Ünvan:</strong> Lastik Alsana Limited Şirketi</p>
               <p><strong>Adres:</strong> Manisa, Türkiye</p>
               <p><strong>Telefon:</strong> +90 554 994 89 89</p>
-              <p><strong>E-posta:</strong> info@otomarket360.com</p>
-              <p><strong>Web Sitesi:</strong> www.otomarket360.com</p>
+              <p><strong>E-posta:</strong> info@lastikalsana.com</p>
+              <p><strong>Web Sitesi:</strong> www.lastikalsana.com</p>
             </div>
           </div>
 
@@ -62,7 +62,7 @@ export default function MesafeliSatisSozlesmesiPage() {
               <h2 className="text-xl font-bold text-gray-800">MADDE 3 - SÖZLEŞME KONUSU</h2>
             </div>
             <p className="text-gray-600 leading-relaxed">
-              İşbu sözleşmenin konusu, ALICI'nın SATICI'ya ait www.otomarket360.com internet sitesinden 
+              İşbu sözleşmenin konusu, ALICI'nın SATICI'ya ait www.lastikalsana.com internet sitesinden 
               elektronik ortamda siparişini yaptığı aşağıda nitelikleri ve satış fiyatı belirtilen ürünün 
               satışı ve teslimi ile ilgili olarak 6502 sayılı Tüketicinin Korunması Hakkında Kanun ve 
               Mesafeli Sözleşmeler Yönetmeliği hükümleri gereğince tarafların hak ve yükümlülüklerinin belirlenmesidir.
@@ -148,7 +148,7 @@ export default function MesafeliSatisSozlesmesiPage() {
             </div>
             <div className="text-gray-600 leading-relaxed space-y-3">
               <p>
-                7.1. ALICI, www.otomarket360.com internet sitesinde sözleşme konusu ürünün temel 
+                7.1. ALICI, www.lastikalsana.com internet sitesinde sözleşme konusu ürünün temel 
                 nitelikleri, satış fiyatı ve ödeme şekli ile teslimata ilişkin ön bilgileri okuyup 
                 bilgi sahibi olduğunu ve elektronik ortamda gerekli teyidi verdiğini beyan eder.
               </p>
@@ -167,7 +167,7 @@ export default function MesafeliSatisSozlesmesiPage() {
           <div className="bg-blue-50 border border-blue-100 rounded-2xl p-6">
             <h3 className="font-semibold text-blue-800 mb-2">İletişim</h3>
             <p className="text-blue-700 text-sm leading-relaxed">
-              Sözleşme hakkında sorularınız için <strong>info@otomarket360.com</strong> adresinden 
+              Sözleşme hakkında sorularınız için <strong>info@lastikalsana.com</strong> adresinden 
               bizimle iletişime geçebilirsiniz.
             </p>
           </div>

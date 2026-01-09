@@ -25,7 +25,8 @@ import {
   HiOutlineChevronRight,
   HiOutlineBadgeCheck,
   HiOutlineRefresh,
-  HiOutlineClock
+  HiOutlineClock,
+  HiOutlineGift
 } from 'react-icons/hi';
 import { useCart } from '@/context/CartContext';
 import { useWishlist } from '@/context/WishlistContext';
@@ -51,8 +52,16 @@ export default function ProductPage({ params }) {
   const [showCampaignToast, setShowCampaignToast] = useState(false);
   const { addToCart, isInCart, getCartItem } = useCart();
   
-  // Lastik kategorisi için 4 al 3 öde kampanyası
-  const isLastikCategory = product?.category === 'oto-lastikler';
+  // Lastik kategorileri için 4 al 3 öde kampanyası (jant ve yağlar hariç)
+  const campaignCategories = [
+    'kis-lastikleri',
+    'yaz-lastikleri', 
+    'dört-mevsim-lastikler',
+    'motorsiklet-lastikleri',
+    'agir-vasita-lastikleri',
+    'is-makinesi-lastikleri'
+  ];
+  const isLastikCategory = product?.category && campaignCategories.includes(product.category);
   const campaignPrice = isCampaignApplied ? product?.price * 3 : product?.price * quantity;
 
   // Beden seçimi gerektiren kategoriler
@@ -387,12 +396,6 @@ export default function ProductPage({ params }) {
         )}
       </div>
 
-      {/* Lastik Campaign Banner */}
-      {product.category === 'oto-lastikler' && (
-        <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-indigo-900 px-4 py-3">
-          <p className="text-white text-center font-bold tracking-wide">🔥 TÜM LASTİKLERDE 4 AL 3 ÖDE 🔥</p>
-        </div>
-      )}
 
       {/* Product Info */}
       <div className="bg-white mt-2 px-4 py-6">
@@ -565,19 +568,12 @@ export default function ProductPage({ params }) {
                   setShowCampaignToast(true);
                   setTimeout(() => setShowCampaignToast(false), 3000);
                 }}
-                className="mt-4 px-5 py-2 bg-white rounded-full shadow-lg hover:shadow-xl transition-shadow"
-                style={{
-                  border: '2px solid transparent',
-                  backgroundImage: 'linear-gradient(white, white), linear-gradient(to right, #0f172a, #1e3a5f)',
-                  backgroundOrigin: 'border-box',
-                  backgroundClip: 'padding-box, border-box',
-                  boxShadow: '0 4px 15px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.1)',
-                }}
+                className="mt-4 w-[90%] flex items-center gap-2.5 px-3 py-2.5 bg-white rounded-full shadow-2xl shadow-gray-400/60 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] transition-all duration-300"
               >
-                <span 
-                  className="text-sm font-bold bg-clip-text text-transparent"
-                  style={{ backgroundImage: 'linear-gradient(to right, #0f172a, #1e3a5f)' }}
-                >
+                <div className="w-8 h-8 bg-gradient-to-br from-zinc-900 to-zinc-700 rounded-full flex items-center justify-center flex-shrink-0">
+                  <HiOutlineGift className="w-4 h-4 text-white" />
+                </div>
+                <span className="text-sm font-bold text-gray-700">
                   4 AL 3 ÖDE Kampanyasını Uygula
                 </span>
               </motion.button>

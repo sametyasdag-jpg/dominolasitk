@@ -80,7 +80,7 @@ export default function SSSPage() {
       questions: [
         {
           q: 'Müşteri hizmetlerine nasıl ulaşabilirim?',
-          a: 'WhatsApp hattımız +90 554 994 89 89 veya info@otomarket360.com e-posta adresimiz üzerinden bize ulaşabilirsiniz. Çalışma saatlerimiz Pazartesi-Cumartesi 09:00-18:00\'dır.'
+          a: 'WhatsApp hattımız +90 554 994 89 89 veya info@lastikalsana.com e-posta adresimiz üzerinden bize ulaşabilirsiniz. Çalışma saatlerimiz Pazartesi-Cumartesi 09:00-18:00\'dır.'
         },
         {
           q: 'Ürünler orijinal mi?',

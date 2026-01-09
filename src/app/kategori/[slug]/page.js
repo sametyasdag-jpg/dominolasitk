@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, use } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { HiOutlineSearch, HiOutlineX, HiOutlineAdjustments } from 'react-icons/hi';
 import ProductCard from '@/components/ProductCard';
@@ -16,8 +17,15 @@ const sortOptions = [
 ];
 
 export default function CategoryPage({ params }) {
-  const { slug } = use(params);
+  const { slug: rawSlug } = use(params);
+  // Decode URL encoded Turkish characters
+  const slug = decodeURIComponent(rawSlug);
+  const searchParams = useSearchParams();
   const { isLoading, getCategoryById, getProductsByCategory } = useProducts();
+  
+  // Get URL params for filtering
+  const urlMarka = searchParams.get('marka');
+  const urlEbat = searchParams.get('ebat');
   
   const [category, setCategory] = useState(null);
   const [products, setProducts] = useState([]);
@@ -26,7 +34,15 @@ export default function CategoryPage({ params }) {
   const [sortBy, setSortBy] = useState('popular');
   const [showFilters, setShowFilters] = useState(false);
   const [priceRange, setPriceRange] = useState({ min: 0, max: 100000 });
-  const [visibleCount, setVisibleCount] = useState(20); // Başlangıçta 20 ürün göster
+  const [visibleCount, setVisibleCount] = useState(20);
+  const [selectedBrand, setSelectedBrand] = useState(urlMarka || '');
+  const [selectedSize, setSelectedSize] = useState(urlEbat || '');
+
+  // Update filters when URL params change
+  useEffect(() => {
+    setSelectedBrand(urlMarka || '');
+    setSelectedSize(urlEbat || '');
+  }, [urlMarka, urlEbat]);
 
   useEffect(() => {
     if (!isLoading) {
@@ -36,7 +52,7 @@ export default function CategoryPage({ params }) {
         const categoryProducts = getProductsByCategory(slug);
         setProducts(categoryProducts);
         setFilteredProducts(categoryProducts);
-        setVisibleCount(20); // Kategori değişince sıfırla
+        setVisibleCount(20);
       }
     }
   }, [slug, isLoading, getCategoryById, getProductsByCategory]);
@@ -44,6 +60,7 @@ export default function CategoryPage({ params }) {
   useEffect(() => {
     let filtered = [...products];
 
+    // Filter by search query
     if (searchQuery) {
       filtered = filtered.filter(product =>
         product.name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -51,10 +68,38 @@ export default function CategoryPage({ params }) {
       );
     }
 
+    // Filter by brand (from URL or selected)
+    if (selectedBrand) {
+      filtered = filtered.filter(product => {
+        const specsMarka = product.specs?.Marka || product.specs?.marka || '';
+        const productBrand = product.brand || '';
+        const productName = product.name || '';
+        
+        return specsMarka.toLowerCase() === selectedBrand.toLowerCase() ||
+               productBrand.toLowerCase() === selectedBrand.toLowerCase() ||
+               productName.toLowerCase().includes(selectedBrand.toLowerCase());
+      });
+    }
+
+    // Filter by size (from URL or selected)
+    if (selectedSize) {
+      filtered = filtered.filter(product => {
+        const specsEbat = product.specs?.Ebat || product.specs?.ebat || '';
+        const productSize = product.size || '';
+        const productName = product.name || '';
+        
+        return specsEbat.toLowerCase().includes(selectedSize.toLowerCase()) ||
+               productSize.toLowerCase().includes(selectedSize.toLowerCase()) ||
+               productName.toLowerCase().includes(selectedSize.toLowerCase());
+      });
+    }
+
+    // Filter by price range
     filtered = filtered.filter(product =>
       product.price >= priceRange.min && product.price <= priceRange.max
     );
 
+    // Sort
     switch (sortBy) {
       case 'price-asc':
         filtered.sort((a, b) => a.price - b.price);
@@ -73,12 +118,12 @@ export default function CategoryPage({ params }) {
     }
 
     setFilteredProducts(filtered);
-    setVisibleCount(20); // Filtre değişince sıfırla
-  }, [products, searchQuery, sortBy, priceRange]);
+    setVisibleCount(20);
+  }, [products, searchQuery, sortBy, priceRange, selectedBrand, selectedSize]);
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50 pt-[106px]">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 pt-[126px]">
         <div className="text-center">
           <div className="w-12 h-12 border-4 border-red-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
           <p className="text-gray-500 font-medium">Yükleniyor...</p>
@@ -89,7 +134,7 @@ export default function CategoryPage({ params }) {
 
   if (!category) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50 pt-[106px]">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 pt-[126px]">
         <div className="text-center">
           <p className="text-gray-500 mb-4">Kategori bulunamadı</p>
         </div>
@@ -98,7 +143,7 @@ export default function CategoryPage({ params }) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-[106px]">
+    <div className="min-h-screen bg-gray-50 pt-[126px]">
       {/* Header */}
       <div className="bg-white border-b border-gray-100 px-4 py-6">
         <div className="max-w-7xl mx-auto">
@@ -129,6 +174,35 @@ export default function CategoryPage({ params }) {
               </button>
             )}
           </div>
+
+          {/* Active Filters */}
+          {(selectedBrand || selectedSize) && (
+            <div className="flex flex-wrap gap-2 mb-4">
+              <span className="text-xs text-gray-500 py-1">Filtreler:</span>
+              {selectedBrand && (
+                <span className="inline-flex items-center gap-1 px-3 py-1 bg-zinc-900 text-white text-xs font-medium rounded-full">
+                  {selectedBrand}
+                  <button onClick={() => setSelectedBrand('')}>
+                    <HiOutlineX className="w-3 h-3" />
+                  </button>
+                </span>
+              )}
+              {selectedSize && (
+                <span className="inline-flex items-center gap-1 px-3 py-1 bg-zinc-700 text-white text-xs font-medium rounded-full">
+                  {selectedSize}
+                  <button onClick={() => setSelectedSize('')}>
+                    <HiOutlineX className="w-3 h-3" />
+                  </button>
+                </span>
+              )}
+              <button 
+                onClick={() => { setSelectedBrand(''); setSelectedSize(''); }}
+                className="text-xs text-red-500 font-medium py-1"
+              >
+                Temizle
+              </button>
+            </div>
+          )}
 
           {/* Sort & Filter */}
           <div className="flex gap-2">

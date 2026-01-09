@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -201,11 +202,11 @@ function CheckoutFooter() {
         <Image className="mt-4" src={footerlogo2} alt="Security" width={120} height={40} />
         
         <p className="text-center text-[11px] text-gray-500 mt-4">
-          <span className="font-bold">Oto Market 360 Limited Şirketi,</span> motorsiklet ve otomotiv tutkunlarına yönelik, kask, koruyucu giyim, eldiven, lastik ve aksesuar gibi ürünlerde uzmanlaşmış güvenilir bir e-ticaret platformudur.
+          <span className="font-bold">Lastik Alsana Limited Şirketi,</span> araç sahiplerine yönelik, kış lastikleri, yaz lastikleri, dört mevsim lastikler, jantlar ve motor yağları gibi ürünlerde uzmanlaşmış güvenilir bir e-ticaret platformudur.
         </p>
         
         <p className="text-center text-[11px] text-gray-500 mt-3">
-          <span className="font-bold">otomarket360.com</span> üzerinden yapacağınız alışverişlerde kredi kartı bilgileriniz yalnızca ödeme işlemi sırasında kullanılır ve kesinlikle veri tabanında saklanmaz.
+          <span className="font-bold">lastikalsana.com</span> üzerinden yapacağınız alışverişlerde kredi kartı bilgileriniz yalnızca ödeme işlemi sırasında kullanılır ve kesinlikle veri tabanında saklanmaz.
         </p>
         
         <p className="text-center text-[11px] text-gray-500 mt-3">
@@ -213,7 +214,7 @@ function CheckoutFooter() {
         </p>
 
         <div className="w-full mt-4 text-xs bg-black text-white p-3 rounded-md text-center">
-          ©2014-2025 Oto Market 360 "Oto Market 360 Limited Şirketi" KURULUŞUDUR.
+          ©2014-2025 Lastik Alsana "Lastik Alsana Limited Şirketi" KURULUŞUDUR.
         </div>
       </div>
     </div>
@@ -353,6 +354,7 @@ export default function CheckoutPage() {
     postalCode: '',
     orderNote: ''
   });
+  const [agreementAccepted, setAgreementAccepted] = useState(false);
 
   const [paymentSettings, setPaymentSettings] = useState({
     iban: '',
@@ -907,7 +909,7 @@ export default function CheckoutPage() {
     handleSubmit();
   };
 
-  const isStep1Valid = formData.firstName && formData.lastName && formData.phone && !emailError && (formData.email === '' || validateEmail(formData.email));
+  const isStep1Valid = formData.firstName && formData.lastName && formData.phone && !emailError && (formData.email === '' || validateEmail(formData.email)) && agreementAccepted;
   const isStep2Valid = formData.address && formData.city && formData.district;
   const isStep3Valid = selectedCargo && paymentMethod && (paymentMethod === 'eft' || (paymentMethod === 'card' && isCardDataValid));
 
@@ -1529,6 +1531,39 @@ export default function CheckoutPage() {
                       </motion.p>
                     )}
                   </div>
+                  
+                  {/* Sözleşme Onayı */}
+                  <div className="mt-4 pt-3 border-t border-gray-100">
+                    <label className="flex items-start gap-3 cursor-pointer group">
+                      <div className="relative flex-shrink-0 mt-0.5">
+                        <input
+                          type="checkbox"
+                          checked={agreementAccepted}
+                          onChange={(e) => setAgreementAccepted(e.target.checked)}
+                          className="sr-only peer"
+                        />
+                        <div className={`w-5 h-5 rounded border-2 transition-all flex items-center justify-center ${
+                          agreementAccepted 
+                            ? 'bg-gradient-to-r from-gray-900 to-indigo-900 border-transparent' 
+                            : 'border-gray-300 group-hover:border-gray-400'
+                        }`}>
+                          {agreementAccepted && (
+                            <HiCheck className="w-3.5 h-3.5 text-white" />
+                          )}
+                        </div>
+                      </div>
+                      <span className="text-xs text-gray-600 leading-relaxed">
+                        <Link 
+                          href="/mesafeli-satis-sozlesmesi" 
+                          target="_blank"
+                          className="font-bold text-gray-900 hover:text-indigo-600 underline underline-offset-2 transition-colors"
+                        >
+                          Mesafeli Satış Sözleşmesi
+                        </Link>
+                        'ni okudum ve kabul ediyorum. Kişisel verilerimin işlenmesine onay veriyorum.
+                      </span>
+                    </label>
+                  </div>
                 </div>
               </div>
 
@@ -1669,7 +1704,7 @@ export default function CheckoutPage() {
                     <button
                       key={cargo.id}
                       onClick={() => setSelectedCargo(cargo.id)}
-                      className={`relative h-14 rounded-xl border-2 transition-all overflow-hidden ${
+                      className={`relative h-[50px] rounded-xl border-2 transition-all overflow-hidden ${
                         selectedCargo === cargo.id
                           ? 'border-indigo-600 bg-white shadow-md'
                           : 'border-gray-200 hover:border-gray-300 bg-white'
@@ -1689,6 +1724,28 @@ export default function CheckoutPage() {
                   ))}
                 </div>
                 <p className="text-[10px] text-gray-500 mt-2">Lütfen tercih ettiğiniz kargo firmasını seçin</p>
+              </div>
+
+              {/* ETBİS Information */}
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-xl border border-blue-100 shadow-sm">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center flex-shrink-0">
+                    <FaShieldAlt className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-sm font-semibold text-gray-900">ETBİS Kayıtlı Site</h3>
+                    <p className="text-xs text-gray-600 mt-0.5">Sitemiz T.C. Ticaret Bakanlığı ETBİS sistemine kayıtlıdır.</p>
+                  </div>
+                </div>
+                <Link
+                  href="https://etbis.ticaret.gov.tr/tr/Anasayfa/SiteAraSonuc?siteId=752d043e-c420-4c9e-9ce1-e466bc9ec869"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 w-full flex items-center justify-center gap-2 py-2.5 px-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white text-xs font-semibold rounded-lg transition-all shadow-md hover:shadow-lg"
+                >
+                  <HiOutlineDocumentText className="w-4 h-4" />
+                  Siteyi Sorgula
+                </Link>
               </div>
 
               {/* Payment Method Selection */}

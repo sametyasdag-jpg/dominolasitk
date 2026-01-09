@@ -20,10 +20,10 @@ import {
 import { getAllProducts, updateProduct } from '@/lib/productService';
 
 const homepageSectionsConfig = [
-  { id: 'featured', name: 'Kışın En Güçlü Kaskları', icon: HiOutlineFire, color: 'from-red-600 to-orange-600', bgColor: 'bg-red-950/30', textColor: 'text-red-500', borderColor: 'border-red-800' },
+  { id: 'featured', name: 'Kışın En Güçlü Lastikleri', icon: HiOutlineFire, color: 'from-red-600 to-orange-600', bgColor: 'bg-red-950/30', textColor: 'text-red-500', borderColor: 'border-red-800' },
   { id: 'school', name: 'Yolculukta Güvenlik', icon: HiOutlineAcademicCap, color: 'from-blue-600 to-indigo-700', bgColor: 'bg-blue-950/30', textColor: 'text-blue-500', borderColor: 'border-blue-800' },
-  { id: 'favorites', name: 'Motosiklet Kombinleri', icon: HiOutlineHeart, color: 'from-purple-600 to-pink-600', bgColor: 'bg-purple-950/30', textColor: 'text-purple-500', borderColor: 'border-purple-800' },
-  { id: 'selected', name: 'Haftanın Öne Çıkan Ürünleri', icon: HiOutlineSparkles, color: 'from-yellow-500 to-orange-600', bgColor: 'bg-yellow-950/30', textColor: 'text-yellow-500', borderColor: 'border-yellow-800' }
+  { id: 'favorites', name: 'Yağlar & Jantlar', icon: HiOutlineHeart, color: 'from-amber-500 to-orange-600', bgColor: 'bg-amber-950/30', textColor: 'text-amber-500', borderColor: 'border-amber-800' },
+  { id: 'selected', name: 'Ayın Süper İndirimleri', icon: HiOutlineSparkles, color: 'from-purple-500 to-violet-600', bgColor: 'bg-purple-950/30', textColor: 'text-purple-500', borderColor: 'border-purple-800' }
 ];
 
 export default function HomepageSectionsPage() {

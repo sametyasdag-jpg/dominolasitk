@@ -8,7 +8,7 @@ export default function UyelikSozlesmesiPage() {
     {
       icon: FaUserCheck,
       title: '1. Üyelik Koşulları',
-      content: `Oto Market 360 platformuna üye olabilmek için:
+      content: `Lastik Alsana platformuna üye olabilmek için:
 
 • 18 yaşını doldurmuş olmak
 • Türkiye Cumhuriyeti vatandaşı veya Türkiye'de yasal ikamet hakkına sahip olmak
@@ -43,7 +43,7 @@ gerekmektedir. Üyelik ücretsizdir ve herhangi bir taahhüt içermez.`
     {
       icon: FaExclamationTriangle,
       title: '4. Sorumluluk Reddi',
-      content: `Oto Market 360:
+      content: `Lastik Alsana:
 
 • Üçüncü taraf web sitelerinin içeriğinden sorumlu değildir
 • Mücbir sebeplerden kaynaklanan gecikmelerden sorumlu tutulamaz
@@ -85,7 +85,7 @@ gerekmektedir. Üyelik ücretsizdir ve herhangi bir taahhüt içermez.`
           <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm mb-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-4">Genel Hükümler</h2>
             <p className="text-gray-600 leading-relaxed">
-              Bu Üyelik Sözleşmesi, Oto Market 360 Limited Şirketi ("Oto Market 360") ile platformumuza 
+              Bu Üyelik Sözleşmesi, Lastik Alsana Limited Şirketi ("Lastik Alsana") ile platformumuza 
               üye olan kullanıcılar ("Üye") arasındaki hak ve yükümlülükleri düzenlemektedir. 
               Üyelik işlemini tamamlayarak bu sözleşme hükümlerini kabul etmiş sayılırsınız.
             </p>
@@ -134,7 +134,7 @@ gerekmektedir. Üyelik ücretsizdir ve herhangi bir taahhüt içermez.`
           <div className="bg-blue-50 border border-blue-100 rounded-2xl p-6">
             <h3 className="font-semibold text-blue-800 mb-2">İletişim</h3>
             <p className="text-blue-700 text-sm leading-relaxed">
-              Üyelik sözleşmesi hakkında sorularınız için <strong>info@otomarket360.com</strong> adresinden 
+              Üyelik sözleşmesi hakkında sorularınız için <strong>info@lastikalsana.com</strong> adresinden 
               bizimle iletişime geçebilirsiniz.
             </p>
           </div>

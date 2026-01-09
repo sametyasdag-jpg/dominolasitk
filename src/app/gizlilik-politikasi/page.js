@@ -8,7 +8,7 @@ export default function GizlilikPolitikasiPage() {
     {
       icon: FaDatabase,
       title: 'Toplanan Veriler',
-      content: `Oto Market 360 olarak, hizmetlerimizi sunmak için aşağıdaki kişisel verileri toplayabiliriz:
+      content: `Lastik Alsana olarak, hizmetlerimizi sunmak için aşağıdaki kişisel verileri toplayabiliriz:
       
 • Ad, soyad ve iletişim bilgileri (telefon, e-posta, adres)
 • Ödeme bilgileri (kredi kartı bilgileri işlem sırasında kullanılır, saklanmaz)
@@ -75,7 +75,7 @@ export default function GizlilikPolitikasiPage() {
               <h2 className="text-2xl font-bold text-gray-800">Giriş</h2>
             </div>
             <p className="text-gray-600 leading-relaxed">
-              Oto Market 360 Limited Şirketi olarak, müşterilerimizin gizliliğine ve kişisel verilerinin korunmasına 
+              Lastik Alsana Limited Şirketi olarak, müşterilerimizin gizliliğine ve kişisel verilerinin korunmasına 
               büyük önem veriyoruz. Bu Gizlilik Politikası, web sitemizi ziyaret ettiğinizde ve hizmetlerimizi 
               kullandığınızda kişisel verilerinizin nasıl toplandığını, kullanıldığını ve korunduğunu açıklamaktadır.
             </p>
@@ -128,7 +128,7 @@ export default function GizlilikPolitikasiPage() {
           <div className="bg-blue-50 border border-blue-100 rounded-2xl p-6">
             <h3 className="font-semibold text-blue-800 mb-2">İletişim</h3>
             <p className="text-blue-700 text-sm leading-relaxed">
-              Gizlilik politikamız hakkında sorularınız için <strong>info@otomarket360.com</strong> adresinden 
+              Gizlilik politikamız hakkında sorularınız için <strong>info@lastikalsana.com</strong> adresinden 
               bizimle iletişime geçebilirsiniz.
             </p>
           </div>

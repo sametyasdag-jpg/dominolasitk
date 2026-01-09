@@ -38,7 +38,7 @@ export default function InsanKaynaklariPage() {
             </div>
             <h1 className="text-3xl md:text-4xl font-bold mb-4">İnsan Kaynakları</h1>
             <p className="text-gray-300 text-lg">
-              Oto Market 360 ailesine katılın!
+              Lastik Alsana ailesine katılın!
             </p>
           </div>
         </div>
@@ -47,9 +47,9 @@ export default function InsanKaynaklariPage() {
         <div className="max-w-4xl mx-auto px-4 py-12">
           {/* About Working */}
           <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">Neden Oto Market 360?</h2>
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">Neden Lastik Alsana?</h2>
             <p className="text-gray-600 leading-relaxed mb-6">
-              Oto Market 360 olarak, çalışanlarımızın en değerli varlığımız olduğuna inanıyoruz. 
+              Lastik Alsana olarak, çalışanlarımızın en değerli varlığımız olduğuna inanıyoruz. 
               Dinamik, yenilikçi ve gelişime açık bir çalışma ortamı sunarak, ekip arkadaşlarımızın 
               hem profesyonel hem de kişisel gelişimlerini destekliyoruz.
             </p>
@@ -94,14 +94,14 @@ export default function InsanKaynaklariPage() {
               <h2 className="text-2xl font-bold">Başvuru Yapın</h2>
             </div>
             <p className="text-red-100 mb-6">
-              Oto Market 360 ailesine katılmak için özgeçmişinizi aşağıdaki e-posta adresine gönderebilirsiniz.
+              Lastik Alsana ailesine katılmak için özgeçmişinizi aşağıdaki e-posta adresine gönderebilirsiniz.
             </p>
             <a 
-              href="mailto:kariyer@otomarket360.com" 
+              href="mailto:kariyer@lastikalsana.com" 
               className="inline-flex items-center gap-2 bg-white text-red-600 px-6 py-3 rounded-xl font-semibold hover:bg-red-50 transition-colors"
             >
               <FaPaperPlane className="w-4 h-4" />
-              kariyer@otomarket360.com
+              kariyer@lastikalsana.com
             </a>
           </div>
 
@@ -112,7 +112,7 @@ export default function InsanKaynaklariPage() {
               <li>• Özgeçmişinizi e-posta ile gönderin</li>
               <li>• İK ekibimiz başvurunuzu değerlendirecektir</li>
               <li>• Uygun görülmeniz halinde mülakat için davet edileceksiniz</li>
-              <li>• Başarılı adaylar Oto Market 360 ailesine katılır</li>
+              <li>• Başarılı adaylar Lastik Alsana ailesine katılır</li>
             </ul>
           </div>
         </div>

@@ -72,7 +72,7 @@ export default function CollectionPage({ params }) {
 
   if (!collection) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50 pt-[106px]">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 pt-[126px]">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-2">Koleksiyon Bulunamadı</h1>
           <p className="text-gray-500 mb-4">Aradığınız koleksiyon mevcut değil.</p>
@@ -86,7 +86,7 @@ export default function CollectionPage({ params }) {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50 pt-[106px]">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 pt-[126px]">
         <div className="text-center">
           <div className="w-12 h-12 border-4 border-red-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
           <p className="text-gray-500 font-medium">Yükleniyor...</p>
@@ -116,7 +116,7 @@ export default function CollectionPage({ params }) {
   const IconComponent = collection.icon;
 
   return (
-    <div className={`min-h-screen bg-gradient-to-b ${collection.bgGradient} pb-24 pt-[106px]`}>
+    <div className={`min-h-screen bg-gradient-to-b ${collection.bgGradient} pb-24 pt-[126px]`}>
       {/* Page Header - Ana sayfadaki gibi */}
       <div className="bg-white border-b border-gray-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-6">
